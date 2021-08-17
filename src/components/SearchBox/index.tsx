@@ -1,18 +1,21 @@
 import { Form, Input, Button } from 'antd'
 import validator from 'validator'
 
-interface Props {}
+interface Props {
+  loading: boolean
+  onAddLocation: (location: string) => void
+}
 
 interface FormValues {
   target: string
 }
 
-const SearchBox = () => {
+const SearchBox: React.FC<Props> = ({ loading, onAddLocation }) => {
   return (
     <Form
       layout={'inline'}
       validateTrigger={'onFinish'}
-      onFinish={(values: FormValues) => console.log(values)}
+      onFinish={({ target }: FormValues) => onAddLocation(target)}
     >
       <Form.Item
         name={'target'}
@@ -31,7 +34,12 @@ const SearchBox = () => {
       >
         <Input />
       </Form.Item>
-      <Button type={'primary'} htmlType={'submit'}>
+      <Button
+        type={'primary'}
+        htmlType={'submit'}
+        loading={loading}
+        disabled={loading}
+      >
         Search
       </Button>
     </Form>
