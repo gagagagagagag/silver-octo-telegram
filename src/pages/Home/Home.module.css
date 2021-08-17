@@ -1,0 +1,16 @@
+.Container {
+  height: 100vh;
+}
+
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.MapContainer {
+  flex: 1;
+}
+
+.SearchBarContainer {
+  flex: none;
+}
