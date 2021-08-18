@@ -5,7 +5,11 @@ interface Props {
 }
 
 const ShowError: React.FC<Props> = ({ message }) => {
-  return <Alert status={'error'}>{message}</Alert>
+  return (
+    <Alert status={'error'} aria-label={'error'}>
+      {message}
+    </Alert>
+  )
 }
 
 export default ShowError

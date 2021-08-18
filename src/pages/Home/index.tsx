@@ -2,7 +2,6 @@ import { Flex, Center, Box } from '@chakra-ui/react'
 import useSWR from 'swr'
 import { AxiosError } from 'axios'
 import { useSelector } from 'react-redux'
-import { RouteComponentProps } from 'react-router-dom'
 
 import fetcher from '../../core/axios/fetcher'
 import { RootState } from '../../store'
@@ -11,7 +10,7 @@ import SearchHistory from '../../components/SearchHistory'
 import SearchBox from '../../components/SearchBox'
 import LocationDetails from '../../components/LocationDetails'
 
-const Home: React.FC<RouteComponentProps> = () => {
+const Home = () => {
   const { locationHistory } = useSelector((state: RootState) => ({
     locationHistory: state.locationHistory,
   }))
