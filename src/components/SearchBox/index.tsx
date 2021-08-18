@@ -25,6 +25,16 @@ const SearchBox: React.FC = () => {
         return {
           locationSource: 'Location source has to be a valid IP or URL!',
         }
+
+      if (
+        validator.isURL(values.locationSource) &&
+        !validator.isURL(values.locationSource, { protocols: [] })
+      ) {
+        return {
+          locationSource:
+            'Please omit the protocol name in the URL (http/https)',
+        }
+      }
     },
   })
 

@@ -16,7 +16,6 @@ export const addLocation = createAsyncThunk<
 
     return data
   } catch (error: Error | AxiosError | any) {
-    console.log(error)
     if (axios.isAxiosError(error)) {
       return thunkAPI.rejectWithValue(error.message)
     } else if ('message' in error) {

@@ -14,6 +14,7 @@ const SearchHistory: React.FC<Props> = ({ history }) => {
       p={'20px'}
       w={'100%'}
       h={'100%'}
+      overflowY={'auto'}
     >
       <Heading size={'md'} mb={'15px'}>
         Search History
