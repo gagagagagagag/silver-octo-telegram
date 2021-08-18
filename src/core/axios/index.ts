@@ -3,7 +3,7 @@ import axios from 'axios'
 import { LocationData } from '../models/locationData'
 
 export const ipStackInstance = axios.create({
-  baseURL: 'http://api.ipstack.com/',
+  baseURL: 'https://api.ipstack.com/',
 })
 
 ipStackInstance.interceptors.request.use((config) => {
