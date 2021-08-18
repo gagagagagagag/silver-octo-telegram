@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import locationHistoryReducer from './reducers/locationHistory.reducer'
+import locationHistoryReducer from './reducers/locationHistory'
 
 const store = configureStore({
   reducer: {

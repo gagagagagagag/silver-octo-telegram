@@ -1,11 +1,11 @@
 import { createReducer } from '@reduxjs/toolkit'
 
-import { addLocation } from '../actions/locationHistory.actions'
+import { addLocation } from '../actions/locationHistory'
 import { LocationData } from '../../core/models/locationData'
 
 interface ReducerState {
   loading: boolean
-  error: Error | null
+  error: string | null
   current: LocationData | null
   history: LocationData[]
 }
@@ -31,7 +31,7 @@ const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(addLocation.rejected, (state, action) => {
       state.loading = false
-      // state.error = action.error
+      state.error = action.payload!
     })
 })
 
